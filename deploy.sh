@@ -13,3 +13,7 @@ sudo cp ./mysqld.cnf $MYSQLD_CNF
 # サービスを再起動する
 sudo systemctl restart mysql.service
 sudo systemctl restart nginx.service
+# ちゃんと起動したかもろもろ確認
+sudo nginx -t
+sudo systemctl status mysql.service
+sudo systemctl status nginx.service
