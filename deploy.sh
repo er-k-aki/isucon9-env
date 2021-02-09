@@ -21,3 +21,9 @@ sudo systemctl restart nginx.service
 sudo nginx -t
 sudo systemctl status mysql.service
 sudo systemctl status nginx.service
+
+# alias
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.s status
+git config --global alias.b branch
