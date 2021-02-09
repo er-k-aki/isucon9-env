@@ -17,6 +17,7 @@ sudo cp ./mysqld.cnf $MYSQLD_CNF
 # サービスを再起動する
 sudo systemctl restart mysql.service
 sudo systemctl restart nginx.service
+sudo systemctl restart isucari.golang.service
 # ちゃんと起動したかもろもろ確認
 sudo nginx -t
 sudo systemctl status mysql.service
