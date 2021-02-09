@@ -12,6 +12,7 @@ sudo cp $MYSQLD_CNF $MYSQLD_CNF`date +"%Y%m%d_%H%M%S"`
 sudo cp ./nginx.conf $NGINX_CONF
 sudo cp ./isucari.conf $ISUCARI_CONF
 sudo cp ./mysqld.cnf $MYSQLD_CNF
+# ./env.sh
 
 # サービスを再起動する
 sudo systemctl restart mysql.service
