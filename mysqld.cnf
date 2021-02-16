@@ -47,7 +47,7 @@ skip-external-locking
 key_buffer_size         = 128M
 max_allowed_packet      = 16M
 thread_stack            = 192K
-thread_cache_size       = 8
+thread_cache_size       = 1024
 
 read_buffer_size = 1M #indexなしフルスキャン
 sort_buffer_size = 1M #ソート
@@ -57,12 +57,12 @@ read_rnd_buffer_size = 4M #indexありソート
 # the first time they are touched
 myisam-recover-options  = BACKUP
 max_connections        = 1024
-#table_open_cache       = 64
+table_open_cache       = 4096
 #thread_concurrency     = 10
 #
 # * Query Cache Configuration
 #
-query_cache_type        = 1
+query_cache_type        = 0
 query_cache_limit	= 128M
 query_cache_size        = 128M
 #
@@ -97,6 +97,7 @@ max_binlog_size   = 100M
 # * InnoDB
 innodb_buffer_pool_size = 256M
 innodb_log_file_size = 32M
+innodb_flush_log_at_trx_commit= 0
 # InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.
 # Read the manual for more InnoDB related options. There are many!
 #
