@@ -22,6 +22,7 @@ sudo systemctl restart isucari.golang.service
 sudo nginx -t
 sudo systemctl status mysql.service
 sudo systemctl status nginx.service
+sudo systemctl status isucari.golang.service
 
 # alias
 git config --global alias.ci commit

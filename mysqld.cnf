@@ -56,14 +56,15 @@ read_rnd_buffer_size = 4M #indexありソート
 # This replaces the startup script and checks MyISAM tables if needed
 # the first time they are touched
 myisam-recover-options  = BACKUP
-#max_connections        = 100
+max_connections        = 1024
 #table_open_cache       = 64
 #thread_concurrency     = 10
 #
 # * Query Cache Configuration
 #
-query_cache_limit	= 1M
-query_cache_size        = 16M
+query_cache_type        = 1
+query_cache_limit	= 128M
+query_cache_size        = 128M
 #
 # * Logging and Replication
 #
@@ -80,7 +81,7 @@ log_error = /var/log/mysql/error.log
 # Here you can see queries with especially long duration
 slow_query_log		= 1
 slow_query_log_file	= /var/log/mysql/mysql-slow.log
-long_query_time = 1
+long_query_time = 0.1
 #log-queries-not-using-indexes
 #
 # The following can be used as easy to replay backup logs or for replication.
@@ -94,8 +95,8 @@ max_binlog_size   = 100M
 #binlog_ignore_db	= include_database_name
 #
 # * InnoDB
-innodb_buffer_pool_size = 1G
-innodb_log_file_size = 64M
+innodb_buffer_pool_size = 256M
+innodb_log_file_size = 32M
 # InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.
 # Read the manual for more InnoDB related options. There are many!
 #
